@@ -29,6 +29,9 @@
         align-items: center;
         gap: 10px;
     }
+    .fw{
+        width: 100%;
+    }
 
     /*-------------------*/
     /*CSS para los Inputs*/
@@ -40,6 +43,8 @@
         padding: 11px 8px 12px 12px;
         border-radius: 5px;
         box-shadow: 0px 0px 0px 1px #ffffff47;
+        box-sizing: border-box;
+        width: 100%;
     }
     .input-t {
         position: absolute;
