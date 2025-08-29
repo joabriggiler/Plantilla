@@ -8,8 +8,8 @@
 <?php require_once __DIR__ . '/styles.php'; ?>
 <body>
     
-<form>
-    <columna>
+<form class="panel">
+    <columna style="margin: 10px;">
         <fila>
             <input nombre text r>
             <input apellido text r>

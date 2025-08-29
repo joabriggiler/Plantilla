@@ -29,8 +29,14 @@
         align-items: center;
         gap: 10px;
     }
-    .fw{
+    .full{
         width: 100%;
+    }
+    .panel {
+        box-sizing: border-box;
+        border-radius: 5px;
+        background: #1d1d1d;
+        box-shadow: 0px 0px 0px 1px #ffffff47;
     }
 
     /*-------------------*/

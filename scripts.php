@@ -69,7 +69,7 @@
 
         // Generar estructura HTML automaticamente
         input.outerHTML = `
-            <div class="input-c fw">
+            <div class="input-c full">
                 ${input.outerHTML}
                 <p class="input-t">${input.getAttribute("placeholder") || input.name}</p>
                 <svg class="input-e" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -82,9 +82,9 @@
 
     // Adaptar abreviaciones HTML
     document.querySelectorAll("fila").forEach(fila => {
-        fila.outerHTML = `<div class="fila">${fila.innerHTML}</div>`;
+        fila.outerHTML = `<div class="fila" ${[...fila.attributes].map(a => `${a.name}="${a.value}"`).join(" ")}>${fila.innerHTML}</div>`;
     });
     document.querySelectorAll("columna").forEach(columna => {
-        columna.outerHTML = `<div class="columna">${columna.innerHTML}</div>`;
+        columna.outerHTML = `<div class="columna" ${[...columna.attributes].map(a => `${a.name}="${a.value}"`).join(" ")}>${columna.innerHTML}</div>`;
     });
 </script>
