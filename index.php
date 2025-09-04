@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Plantilla</title>
 </head>
 <?php require_once __DIR__ . '/styles.php'; ?>
 <body>
     
 <form class="panel">
     <columna style="margin: 10px;">
-        <fila>
+        <fila class="sb">
             <input nombre text r>
             <input apellido text r>
         </fila>

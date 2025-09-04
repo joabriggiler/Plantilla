@@ -1,6 +1,10 @@
 <style>
     :root{
-        --color-base: #3c3c3c;
+        --color-base: #1d1d1d;
+        --color-base-s: #3c3c3c;
+        --color-base-acent: #ffffff47;
+        --color-base-acent-s: #ffffff8f;
+        --color-acent: #2ea1c5;
 
         --e-color: #F23D4F;
     }
@@ -18,10 +22,11 @@
     .fila{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
+        justify-content: start;
         gap: 10px;
     }
+    .sb{ justify-content: space-between; }
     .columna{
         display: flex;
         flex-direction: column;
@@ -35,27 +40,27 @@
     .panel {
         box-sizing: border-box;
         border-radius: 5px;
-        background: #1d1d1d;
-        box-shadow: 0px 0px 0px 1px #ffffff47;
+        background: var(--color-base);
+        box-shadow: 0px 0px 0px 1px var(--color-base-acent);
     }
 
     /*-------------------*/
     /*CSS para los Inputs*/
     .input-c{ position: relative; }
     input{
-        background-color: var(--color-base);
+        background-color: var(--color-base-s);
         color: white;
         border: none;
         padding: 11px 8px 12px 12px;
         border-radius: 5px;
-        box-shadow: 0px 0px 0px 1px #ffffff47;
+        box-shadow: 0px 0px 0px 1px var(--color-base-acent);
         box-sizing: border-box;
         width: 100%;
     }
     .input-t {
         position: absolute;
         margin: 0;
-        color: #ffffff61;
+        color: var(--color-base-acent);
         font-size: 12px;
         line-height: 10px;
         left: 4px;
@@ -66,10 +71,10 @@
         pointer-events: none;
     }
     /*Input Focus*/
-    input:focus{ outline: none;box-shadow: 0px 0px 0px 1px #ffffff8f; }
+    input:focus{ outline: none;box-shadow: 0px 0px 0px 1px var(--color-base-acent-s); }
     .input-c input:not(:placeholder-shown){ padding: 18px 12px 5px 8px; }
     .input-c input:not(:placeholder-shown) ~ .input-t { top: 3px;opacity: 1; }
-    .input-c input:focus ~ .input-t { color: #ffffffab; }
+    .input-c input:focus ~ .input-t { color: var(--color-base-acent-s); }
 
     /*Input Error*/
     .input-e{
@@ -88,7 +93,7 @@
     button {
         width: 100%;
         padding: 11px 10px 11px 10px;
-        background: #2ea1c5;
+        background: var(--color-acent);
         border: none;
         border-radius: 5px;
         color: white;
