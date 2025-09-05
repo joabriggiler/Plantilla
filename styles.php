@@ -163,10 +163,6 @@
         background: #000000ab;
         opacity:0;
     }
-    .focusContent {
-        display: none;
-        visibility: hidden;
-    }
 
 
 

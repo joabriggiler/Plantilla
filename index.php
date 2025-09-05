@@ -34,7 +34,7 @@
 </div>
 
 <!--focusArea-->
-<div class="focusContent">
+<div hidden>
     <columna class="panel p" style="width:280px;" tabindex="0">
         <p class="tc">Los términos y condiciones son un acuerdo que establece las reglas de uso, derechos y responsabilidades entre una empresa y sus usuarios.</p>
         <button onclick="closeFocus()">Entiendo</button>
