@@ -82,9 +82,47 @@
 
     // Adaptar abreviaciones HTML
     document.querySelectorAll("fila").forEach(fila => {
-        fila.outerHTML = `<div class="fila" ${[...fila.attributes].map(a => `${a.name}="${a.value}"`).join(" ")}>${fila.innerHTML}</div>`;
+        let classAttr = "fila";
+        if (fila.hasAttribute("class")) {
+            classAttr += " " + fila.getAttribute("class");
+        }
+
+        const attrs = [...fila.attributes]
+            .filter(a => a.name !== "class")
+            .map(a => `${a.name}="${a.value}"`)
+            .join(" ");
+
+        fila.outerHTML = `<div class="${classAttr}" ${attrs}>${fila.innerHTML}</div>`;
     });
     document.querySelectorAll("columna").forEach(columna => {
-        columna.outerHTML = `<div class="columna" ${[...columna.attributes].map(a => `${a.name}="${a.value}"`).join(" ")}>${columna.innerHTML}</div>`;
+        let classAttr = "columna";
+        if (columna.hasAttribute("class")) {
+            classAttr += " " + columna.getAttribute("class");
+        }
+
+        const attrs = [...columna.attributes]
+            .filter(a => a.name !== "class")
+            .map(a => `${a.name}="${a.value}"`)
+            .join(" ");
+
+        columna.outerHTML = `<div class="${classAttr}" ${attrs}>${columna.innerHTML}</div>`;
     });
+
+    // Funcion para los acordeones
+    var acc = document.getElementsByClassName("acordeon");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("acordeon-c-a");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            panel.style.opacity = 0;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            panel.style.opacity = 1;
+        }
+    });
+    }
 </script>

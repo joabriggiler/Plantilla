@@ -18,11 +18,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+        gap: 14px;
     }
     .fila{
         display: flex;
         flex-direction: row;
         align-items: center;
+        box-sizing: border-box;
         justify-content: start;
         gap: 10px;
     }
@@ -43,6 +46,34 @@
         background: var(--color-base);
         box-shadow: 0px 0px 0px 1px var(--color-base-acent);
     }
+
+    /*-----------------*/
+    /*CSS para margenes*/
+    .p{ padding: 10px; }
+    .m{ margin: 10px; }
+
+    /*-------------------*/
+    /*Css para los textos*/
+    p{
+        margin: 0;
+        color: white;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    /*--------------------*/
+    /*CSS para el acordeon*/
+    .acordeon{ cursor: pointer; }
+    .acordeon-c{
+        max-height: 0; overflow: hidden;
+        transition: max-height 0.23s ease-out, opacity 0.1s ease-out;
+    }
+    .acordeon:after {
+        content: '+'; color: white;
+        font-size: 14px; margin: 0;
+        float: right;
+    }
+    .acordeon-c-a:after { content: "-";transform: translate(-2px, -1px); }
 
     /*-------------------*/
     /*CSS para los Inputs*/
