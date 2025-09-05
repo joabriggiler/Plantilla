@@ -101,6 +101,7 @@
         opacity: 0;
         pointer-events: none;
     }
+
     /*Input Focus*/
     input:focus{ outline: none;box-shadow: 0px 0px 0px 1px var(--color-base-acent-s); }
     .input-c input:not(:placeholder-shown){ padding: 18px 12px 5px 8px; }
@@ -120,6 +121,14 @@
     .input-c input:required:user-invalid { box-shadow: 0px 0px 0px 1px var(--e-color); }
     .input-c input:required:user-invalid ~ .input-t { color: var(--e-color); }
     .input-c input:required:user-invalid ~ .input-e { opacity: 1; }
+
+    /*Manejar auto-completar de inputs*/
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px var(--color-base-s) inset, 0px 0px 0px 1px var(--color-base-acent)  !important;
+        -webkit-text-fill-color: white !important;
+    }
+    .input-c input:-webkit-autofill ~ .input-t { color: var(--color-base-acent); }
+
 
     button {
         width: 100%;
