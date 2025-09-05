@@ -67,7 +67,7 @@
         if (maxAttr) input.setAttribute("max", maxAttr.split("=")[1]);
 
 
-        // Generar estructura HTML automaticamente
+        // Generar estructura HTML de inputs automaticamente
         input.outerHTML = `
             <div class="input-c full">
                 ${input.outerHTML}
@@ -125,16 +125,9 @@
         });
     }
 
-    // Funciones para superponer un contenedor
-    function openFocus(){
-        const html = `
-            <div id="focusArea">
-                <div class="panel columna p" style="width:280px;" tabindex="0">
-                    <p class="tc">Los términos y condiciones son un acuerdo que establece las reglas de uso, derechos y responsabilidades entre una empresa y sus usuarios.</p>
-                    <button onclick="closeFocus()">Entiendo</button>
-                </div>
-            </div>
-        `;
+    // Funciones para focus
+    function openFocus(el){
+        const html = `<div id="focusArea">${el.previousElementSibling.innerHTML}</div>`;
         document.body.insertAdjacentHTML('afterbegin', html);
 
         const focus = document.getElementById("focusArea");

@@ -160,8 +160,12 @@
         align-items: center;
         z-index: 100;
         backdrop-filter: blur(5px);
-        background: #0000007d;
+        background: #000000ab;
         opacity:0;
+    }
+    .focusContent {
+        display: none;
+        visibility: hidden;
     }
 
 

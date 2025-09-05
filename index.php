@@ -8,6 +8,7 @@
 <?php require_once __DIR__ . '/styles.php'; ?>
 <body>
     
+<!--Formulario-->
 <form class="panel" style="width: 400px;">
     <columna class="m">
         <fila class="sb">
@@ -19,6 +20,8 @@
         <button type="submit">Enviar</button>
     </columna>
 </form>
+
+<!--Acordeon-->
 <div class="panel" style="width: 400px;">
     <fila class="acordeon sb p">
         <p>Opciones avanzadas</p>
@@ -29,7 +32,15 @@
         </div>
     </div>
 </div>
-<p onclick="openFocus()" type="submit" style="cursor:pointer;">Ver terminos y condiciones</p>
+
+<!--focusArea-->
+<div class="focusContent">
+    <columna class="panel p" style="width:280px;" tabindex="0">
+        <p class="tc">Los términos y condiciones son un acuerdo que establece las reglas de uso, derechos y responsabilidades entre una empresa y sus usuarios.</p>
+        <button onclick="closeFocus()">Entiendo</button>
+    </columna>
+</div>
+<p onclick="openFocus(this)" style="cursor:pointer;">Ver terminos y condiciones</p>
 
 <?php require_once __DIR__ . '/scripts.php'; ?>
 </body>
