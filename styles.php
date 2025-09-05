@@ -9,6 +9,7 @@
         --e-color: #F23D4F;
     }
     body, div, p, input, svg{ transition: all .2s cubic-bezier(0.23, 1, 0.320, 1);font-family: Arial, Helvetica, sans-serif; }
+    body:focus, div:focus, p:focus { outline: none !important; }
     body{
         margin: 0;
         background-color: #252525;
@@ -60,20 +61,9 @@
         font-size: 14px;
         line-height: 18px;
     }
-
-    /*--------------------*/
-    /*CSS para el acordeon*/
-    .acordeon{ cursor: pointer; }
-    .acordeon-c{
-        max-height: 0; overflow: hidden;
-        transition: max-height 0.23s ease-out, opacity 0.1s ease-out;
+    .tc{
+        text-align: center !important;
     }
-    .acordeon:after {
-        content: '+'; color: white;
-        font-size: 14px; margin: 0;
-        float: right;
-    }
-    .acordeon-c-a:after { content: "-";transform: translate(-2px, -1px); }
 
     /*-------------------*/
     /*CSS para los Inputs*/
@@ -130,6 +120,9 @@
     .input-c input:-webkit-autofill ~ .input-t { color: var(--color-base-acent); }
 
 
+
+    /*--------------------*/
+    /*CSS para los botones*/
     button {
         width: 100%;
         padding: 11px 10px 11px 10px;
@@ -141,6 +134,36 @@
         outline: none;
         cursor: pointer;
     }
-    /*-------------------*/
+
+    /*--------------------*/
+    /*CSS para el acordeon*/
+    .acordeon{ cursor: pointer; }
+    .acordeon-c{
+        max-height: 0; overflow: hidden;
+        transition: max-height 0.23s ease-out, opacity 0.1s ease-out;
+    }
+    .acordeon:after {
+        content: '+'; color: white;
+        font-size: 14px; margin: 0;
+        float: right;
+    }
+    .acordeon-c-a:after { content: "-";transform: translate(-2px, -1px); }
+
+    /*------------------*/
+    /*CSS para el focus*/
+    #focusArea {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        backdrop-filter: blur(5px);
+        background: #0000007d;
+        opacity:0;
+    }
+
+
 
 </style>

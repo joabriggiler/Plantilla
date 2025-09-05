@@ -111,18 +111,44 @@
     // Funcion para los acordeones
     var acc = document.getElementsByClassName("acordeon");
     var i;
-
     for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        this.classList.toggle("acordeon-c-a");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-            panel.style.opacity = 0;
-        } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-            panel.style.opacity = 1;
-        }
-    });
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("acordeon-c-a");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+                panel.style.opacity = 0;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                panel.style.opacity = 1;
+            }
+        });
+    }
+
+    // Funciones para superponer un contenedor
+    function openFocus(){
+        const html = `
+            <div id="focusArea">
+                <div class="panel columna p" style="width:280px;" tabindex="0">
+                    <p class="tc">Los términos y condiciones son un acuerdo que establece las reglas de uso, derechos y responsabilidades entre una empresa y sus usuarios.</p>
+                    <button onclick="closeFocus()">Entiendo</button>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('afterbegin', html);
+
+        const focus = document.getElementById("focusArea");
+        focus.addEventListener("click", e => {if (e.target === focus) closeFocus()});
+        document.addEventListener("keydown", function escListener(e){
+        if(e.key === "Escape"){document.removeEventListener("keydown", escListener);closeFocus()}});
+        setTimeout(() => {focus.style.opacity = 1}, 10);
+    }
+
+    function closeFocus(){
+        const focus = document.getElementById("focusArea");
+        if (!focus) return;
+
+        focus.style.opacity = 0;
+        focus.addEventListener("transitionend", () => {focus.remove();}, { once: true });
     }
 </script>

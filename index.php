@@ -29,6 +29,7 @@
         </div>
     </div>
 </div>
+<p onclick="openFocus()" type="submit" style="cursor:pointer;">Ver terminos y condiciones</p>
 
 <?php require_once __DIR__ . '/scripts.php'; ?>
 </body>
